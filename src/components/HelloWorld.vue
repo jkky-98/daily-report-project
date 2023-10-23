@@ -16,6 +16,7 @@ export default {
   methods: {
     updateLove() {
       this.love++;
+
       
     }
   },
