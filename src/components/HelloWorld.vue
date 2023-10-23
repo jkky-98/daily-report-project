@@ -5,14 +5,22 @@
     <p>Deadline : {{ day + 5 }}</p>
     <p v-html="explain"></p>
     <p>In progress : {{seen ? 'Yes' : 'No'}}</p>
+    <button @click='updateLove'>좋아요</button>
+    <p>{{love}}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  methods: {
+    updateLove() {
+      this.love++;
+    }
+  },
   data() {
     return {
+      love: 0,
       msg: 'Welcome to Semose',
       author: 'Ajou University',
       explain: '<strong>Semose is a web application that helps student to manage your real estate purchase and sale.<strong>',
