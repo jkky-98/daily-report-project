@@ -7,6 +7,7 @@
     <p>In progress : {{seen ? 'Yes' : 'No'}}</p>
     <button @click='updateLove'>좋아요</button>
     <p>{{love}}</p>
+    <h2>Today : {{today}}</h2>
   </div>
 </template>
 
@@ -17,7 +18,13 @@ export default {
     updateLove() {
       this.love++;
 
-      
+
+    }
+  },
+  computed: {
+    today() {
+      let date = new Date();
+      return date.getDate();
     }
   },
   data() {
